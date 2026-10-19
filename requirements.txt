@@ -1,0 +1,8 @@
+torch>=2.0
+torchvision>=0.15
+ultralytics>=8.0
+remotezip>=0.12
+pandas>=2.0
+matplotlib>=3.7
+flask>=3.0
+pillow>=10.0

@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+train.log
+data/RDD2022/
+data/raw/
+data/yolo/images/
+data/yolo/labels/
+data/demo_images/
