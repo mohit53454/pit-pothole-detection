@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Adaptive-icon foreground: the PIT mark mapped into the 108dp canvas with the
+     same 2.6x scale + 54dp centre used before, so it stays inside the 72dp safe
+     zone and no launcher mask can clip it. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:pathData="M43.6,29.56 L34.76,78.44"
+        android:strokeColor="@color/ink"
+        android:strokeWidth="4.94"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M64.4,29.56 L73.24,78.44"
+        android:strokeColor="@color/ink"
+        android:strokeWidth="4.94"
+        android:strokeLineCap="round" />
+
+    <path
+        android:pathData="M42.04,61.8 a11.96,6.76 0 1,0 23.92,0 a11.96,6.76 0 1,0 -23.92,0"
+        android:fillColor="@color/ink" />
+</vector>

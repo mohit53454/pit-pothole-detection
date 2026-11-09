@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.pothole.detector'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.pothole.detector"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        // Real phones only - keeps the ONNX Runtime native libs out of the
+        // x86 slices and roughly halves the APK.
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    androidResources {
+        // Store the model uncompressed so it can be read straight from the APK.
+        noCompress += ['onnx']
+    }
+}
+
+dependencies {
+    // kotlin-stdlib 1.8+ absorbed the jdk7/jdk8 artifacts. ONNX Runtime still
+    // pulls the old 1.6.21 splits, which duplicate classes against the 1.8.22
+    // stdlib that androidx.activity brings in.
+    constraints {
+        implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22') {
+            because 'align with kotlin-stdlib 1.8.22 to avoid duplicate classes'
+        }
+        implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22') {
+            because 'align with kotlin-stdlib 1.8.22 to avoid duplicate classes'
+        }
+    }
+
+    implementation 'androidx.activity:activity:1.9.0'
+    implementation 'androidx.camera:camera-core:1.3.4'
+    implementation 'androidx.camera:camera-camera2:1.3.4'
+    implementation 'androidx.camera:camera-lifecycle:1.3.4'
+    implementation 'androidx.camera:camera-view:1.3.4'
+    implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.20.0'
+}

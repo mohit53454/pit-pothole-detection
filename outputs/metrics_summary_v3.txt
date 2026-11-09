@@ -1,0 +1,13 @@
+Weights: C:\Users\mohit\OneDrive\Documents\bsc data scince\python\project\pothole-detection\runs\pothole\train_v3\weights\best.pt
+Validation (415 held-out images)
+  mAP@50      : 0.434
+  mAP@50-95   : 0.202
+  precision   : 0.577
+  recall      : 0.395
+
+Per class
+  class  precision  recall  map50  map50_95
+pothole     0.5768   0.395 0.4338    0.2017
+
+Demo inference (32 unseen images, conf>=0.25)
+  damage boxes found: 23

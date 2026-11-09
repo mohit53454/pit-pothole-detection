@@ -1,9 +1,40 @@
+# Python
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Local environments
+.venv*/
+venv/
+.env
+
+# Logs
 *.log
+
+# Datasets and raw imagery — large, reproducible from RDD2022
 data/RDD2022/
+data/_rdd2022/
 data/raw/
-data/yolo/images/
-data/yolo/labels/
+data/external/
+data/v4/
+data/yolo/
+data/yolo2/
+data/yolo3/
 data/demo_images/
+
+# Local Android SDK copy and Gradle build output
+android-sdk/
+android-app/.gradle/
+android-app/build/
+android-app/app/build/
+android-app/local.properties
+android-app/.idea/
+*.apk
+*.iml
+
+# Training runs: existing ones stay tracked, new ones are local only
+runs/
+
+# Local toolchain (Gradle distribution + installer zip, both re-downloadable)
+tools/gradle-*/
+tools/*.zip

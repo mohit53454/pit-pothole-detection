@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Legacy launcher icon (API 24-25, no adaptive-icon support): the PIT mark on
+     a plain white rounded tile. Launchers that apply their own mask crop the
+     corners, which is the expected legacy behaviour. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:pathData="M24,0 L84,0 A24,24 0 0 1 108,24 L108,84 A24,24 0 0 1 84,108 L24,108 A24,24 0 0 1 0,84 L0,24 A24,24 0 0 1 24,0 Z"
+        android:fillColor="@color/surface" />
+
+    <path
+        android:pathData="M43.6,29.56 L34.76,78.44"
+        android:strokeColor="@color/ink"
+        android:strokeWidth="4.94"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M64.4,29.56 L73.24,78.44"
+        android:strokeColor="@color/ink"
+        android:strokeWidth="4.94"
+        android:strokeLineCap="round" />
+
+    <path
+        android:pathData="M42.04,61.8 a11.96,6.76 0 1,0 23.92,0 a11.96,6.76 0 1,0 -23.92,0"
+        android:fillColor="@color/ink" />
+</vector>

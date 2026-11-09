@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#121212">
+<link rel="manifest" href="manifest.webmanifest">
+<title>🕳️ Live Pothole Detector</title>
+<style>
+  :root { --accent:#ff5722; --bg:#121212; --card:#1e1e1e; --txt:#eee; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { margin:0; font-family:system-ui,sans-serif; background:var(--bg); color:var(--txt);
+         overscroll-behavior:none; }
+  header { padding:12px 14px; background:var(--card); text-align:center; }
+  header h1 { margin:0; font-size:1.05rem; }
+  header p { margin:3px 0 0; font-size:.75rem; opacity:.7; }
+  #stage { position:relative; width:100%; background:#000; overflow:hidden; }
+  video, #snap { display:block; width:100%; }
+  #overlay { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+  #hud { position:absolute; top:8px; left:8px; background:rgba(0,0,0,.6);
+         border-radius:8px; padding:6px 10px; font-size:.78rem; line-height:1.5; }
+  .row { display:flex; gap:10px; padding:12px 14px; }
+  .btn { flex:1; padding:14px; border:0; border-radius:12px; font-size:1rem; font-weight:700;
+         background:var(--accent); color:#fff; cursor:pointer; }
+  .btn.sec { background:#333; }
+  .btn:disabled { opacity:.5; }
+  #status { padding:0 14px 6px; font-size:.85rem; text-align:center; min-height:1.4em; opacity:.9; }
+  .legend { display:flex; flex-wrap:wrap; gap:6px; padding:0 14px 14px; font-size:.72rem; }
+  .legend span { display:flex; align-items:center; gap:5px; background:var(--card);
+                 padding:5px 8px; border-radius:8px; }
+  .dot { width:9px; height:9px; border-radius:50%; }
+  #filebtn { display:none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🕳️ Live Pothole Detector</h1>
+  <p>offline · on-device YOLOv8n · point your camera at the road</p>
+</header>
+
+<div id="stage">
+  <video id="video" playsinline autoplay muted style="display:none"></video>
+  <img id="snap" style="display:none" alt="">
+  <canvas id="overlay"></canvas>
+  <div id="hud" style="display:none">
+    <span id="fps">– fps</span><br>
+    <span id="count">0 boxes</span>
+  </div>
+</div>
+
+<div class="row">
+  <button class="btn" id="camBtn">📷 Start Live Camera</button>
+  <button class="btn sec" id="photoBtn">🖼️ Test Photo</button>
+  <input id="filebtn" type="file" accept="image/*" capture="environment">
+</div>
+
+<div id="status">Loading model (12 MB, first launch only)…</div>
+
+<div class="legend">
+  <span><i class="dot" style="background:#4fc3f7"></i>D00 longitudinal</span>
+  <span><i class="dot" style="background:#ffd54f"></i>D10 transverse</span>
+  <span><i class="dot" style="background:#81c784"></i>D20 alligator</span>
+  <span><i class="dot" style="background:#e57373"></i>D40 pothole</span>
+</div>
+
+<script src="ort/ort.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

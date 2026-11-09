@@ -1,0 +1,2 @@
+class,precision,recall,map50,map50_95
+pothole,0.5768,0.395,0.4338,0.2017

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Monochrome brand palette: ink on paper. The only colour in the app is the
+     red detection box, which keeps it readable against the ink-on-white UI. -->
+<resources>
+    <color name="ink">#FF0A0A0A</color>
+    <color name="ink_soft">#FF6E6E73</color>
+    <color name="ink_faint">#FFA8A8AD</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="surface_stroke">#FFEBEBED</color>
+    <color name="surface_press">#14000000</color>
+    <color name="on_ink_press">#33FFFFFF</color>
+
+    <!-- Rules and dividers: a shade under surface_stroke so hairlines read as
+         structure rather than as another card edge. -->
+    <color name="hairline">#FFF0F0F2</color>
+</resources>

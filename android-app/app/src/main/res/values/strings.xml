@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PIT</string>
+    <string name="tagline">ROAD SURFACE SCAN</string>
+
+    <string name="gallery">Gallery</string>
+    <string name="flip">Flip</string>
+
+    <string name="status_starting">Starting camera…</string>
+    <string name="status_scanning">Scanning road…</string>
+    <string name="status_no_camera">Camera unavailable — use Gallery</string>
+    <string name="permission_rationale">PIT needs camera access to scan the road ahead. Everything is processed on your phone and never leaves the device.</string>
+
+    <string name="conf_label">MIN CONFIDENCE</string>
+    <string name="fps_idle">— fps</string>
+
+    <string name="privacy_footer">ON-DEVICE · NO NETWORK</string>
+</resources>
